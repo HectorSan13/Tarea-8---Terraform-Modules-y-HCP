@@ -1,3 +1,16 @@
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
+  }
+}
+
+provider "cloudflare" {
+  api_token = var.api_token
+}
+
 # Módulo de la base de datos D1
 module "d1" {
   source = "./modules/d1"
